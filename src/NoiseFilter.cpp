@@ -29,6 +29,9 @@ void NoiseFilter::filter(base::samples::LaserScan& filterdScan, const base::samp
     //copy attributes to filtered scan
     filterdScan = ls;
 
+    // Set the maxRange for the filtered scan
+    filterdScan.maxRange = maxRange*1000;
+
     for(unsigned int i = 0; i < maskedPoints.size(); i++) {
 	maskedPoints[i] = false;
     }
@@ -38,7 +41,9 @@ void NoiseFilter::filter(base::samples::LaserScan& filterdScan, const base::samp
     for(unsigned int i = 0; i < ls.ranges.size(); i++) {
 	
 	if(!ls.isRangeValid(ls.ranges[i]))
-	    continue;
+	{
+		maskedPoints[i] = true;
+	}
 	
 	const double incline = calculateInclineAngle(ls.ranges[i], lastRange, ls.angular_resolution * (i - lastRangeIndex));
 	

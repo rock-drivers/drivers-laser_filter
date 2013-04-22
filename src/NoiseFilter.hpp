@@ -28,6 +28,7 @@ private:
      * Defines how many readings next to an invalid reading get marked as invalid
      * */
     int maskedNeighbours;
+    double maxRange;
 public:
     
     NoiseFilter();
@@ -47,6 +48,11 @@ public:
 	maskedNeighbours = num;
     }
     
+    void setMaxRange(const double max)
+	{
+	maxRange = max;
+	}
+
     void filter(base::samples::LaserScan& filterdScan, const base::samples::LaserScan& ls_in);
 };
 
