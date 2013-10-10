@@ -5,7 +5,7 @@
   <author>Janosch Machowinski/Janosch.Machowinski@dfki.de</author>
 
   <depend package="base/types" />
-  <depend package="gui/vizkit" optional="1" />
+  <depend package="gui/vizkit3d" optional="1" />
 
   <tags>needs_opt</tags>
 </package>

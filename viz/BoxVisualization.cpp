@@ -1,11 +1,11 @@
 #include "BoxVisualization.hpp"
 #include <osg/Geometry>
 #include <osg/Geode>
-#include <vizkit/Vizkit3DHelper.hpp>
+#include <vizkit3d/Vizkit3DHelper.hpp>
 #include <osg/ShapeDrawable>
 #include <osg/Shape>
 
-namespace vizkit {
+namespace vizkit3d {
 VizkitQtPlugin(BoxVisualization)
 
 using namespace Eigen;

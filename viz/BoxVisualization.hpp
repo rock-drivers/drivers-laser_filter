@@ -1,7 +1,7 @@
 #ifndef BOXVISUALIZATION_HPP
 #define BOXVISUALIZATION_HPP
 
-#include <vizkit/Vizkit3DPlugin.hpp>
+#include <vizkit3d/Vizkit3DPlugin.hpp>
 #include <laser_filter/BoxFilter.hpp>
 #include <base/eigen.h>
 
@@ -9,7 +9,7 @@ namespace osg {
     class Geometry;
 }
 
-namespace vizkit {
+namespace vizkit3d {
 
 class BoxVisualization: public Vizkit3DPlugin<laser_filter::Box>
 {
