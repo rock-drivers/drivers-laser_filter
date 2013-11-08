@@ -22,6 +22,12 @@ void BoxFilter::setFilterFrame(const Eigen::Affine3d& ff)
     
 void BoxFilter::filter(base::samples::LaserScan& filterdScan, const base::samples::LaserScan& ls)
 {
+    if(boundingBoxes.empty())
+    {
+        filterdScan = ls;
+        return;
+    }
+    
     std::vector<Eigen::Vector3d> pointCloud;
 
     //copy attributes to filtered scan
