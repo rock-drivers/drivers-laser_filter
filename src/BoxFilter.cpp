@@ -32,7 +32,7 @@ void BoxFilter::filter(base::samples::LaserScan& filterdScan, const base::sample
 	Eigen::Vector3d curPoint;
 	
 	//convert reading to cartesian coordinates
-	if(!ls.getPointFromScanBeam(i, curPoint))
+	if(!ls.getPointFromScanBeamXForward(i, curPoint))
 	    continue;
 	
 	//transform into filter frame
