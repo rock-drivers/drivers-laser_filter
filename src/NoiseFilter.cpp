@@ -6,7 +6,7 @@
 
 namespace laser_filter {
     
-NoiseFilter::NoiseFilter():minIncline(0.0), maxIncline(0.0), maskedNeighbours(0)
+NoiseFilter::NoiseFilter():minIncline(0.0), maxIncline(0.0), maskedNeighbours(0), maxRange(0.0)
 {
 
 }
@@ -39,11 +39,10 @@ void NoiseFilter::filter(base::samples::LaserScan& filterdScan, const base::samp
 //     std::cout << std::endl << std::endl << "NEW SCAN " << std::endl;
     
     for(unsigned int i = 0; i < ls.ranges.size(); i++) {
-	
-	if(!ls.isRangeValid(ls.ranges[i]))
-	{
+
+	if(!filterdScan.isRangeValid(ls.ranges[i]))
 		maskedPoints[i] = true;
-	}
+
 	
 	const double incline = calculateInclineAngle(ls.ranges[i], lastRange, ls.angular_resolution * (i - lastRangeIndex));
 	
