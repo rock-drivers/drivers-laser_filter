@@ -3,6 +3,7 @@
   
   </description>
   <author>Janosch Machowinski/Janosch.Machowinski@dfki.de</author>
+  <maintainer>Janosch Machowinski/Janosch.Machowinski@dfki.de</maintainer>
 
   <depend package="base/types" />
   <depend package="gui/vizkit3d" optional="1" />
