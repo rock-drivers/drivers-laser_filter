@@ -2,7 +2,7 @@
 #define BOXFILTER_HPP
 
 #include <base/samples/LaserScan.hpp>
-#include <base/eigen.h>
+#include <base/Eigen.hpp>
 
 namespace laser_filter {
 

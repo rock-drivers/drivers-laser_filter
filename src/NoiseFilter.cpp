@@ -1,7 +1,6 @@
 #include "NoiseFilter.hpp"
 
 #include <math.h>
-#include <base/samples/laser_scan.h>
 #include <iostream>
 
 namespace laser_filter {

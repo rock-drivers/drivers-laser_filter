@@ -3,7 +3,7 @@
 
 #include <vizkit3d/Vizkit3DPlugin.hpp>
 #include <laser_filter/BoxFilter.hpp>
-#include <base/eigen.h>
+#include <base/Eigen.hpp>
 
 namespace osg {
     class Geometry;

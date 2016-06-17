@@ -1,7 +1,7 @@
 #ifndef NOISEFILTER_HPP
 #define NOISEFILTER_HPP
 
-#include <base/samples/laser_scan.h>
+#include <base/samples/LaserScan.hpp>
 
 namespace laser_filter {
 
