@@ -12,7 +12,16 @@ BoxFilter::BoxFilter(): filterFrame(Eigen::Affine3d::Identity())
 
 void BoxFilter::addBoundingBox(const laser_filter::Box& box)
 {
-    boundingBoxes.push_back(Eigen::AlignedBox<double, 3>(box.downLeft, box.upRight));
+    // upRight actually means Max and downLeft Min.
+    base::Vector3d max_vec;
+    max_vec[0] = std::max(box.downLeft[0], box.upRight[0]);
+    max_vec[1] = std::max(box.downLeft[1], box.upRight[1]);
+    max_vec[2] = std::max(box.downLeft[2], box.upRight[2]);
+    base::Vector3d min_vec;
+    min_vec[0] = std::min(box.downLeft[0], box.upRight[0]);
+    min_vec[1] = std::min(box.downLeft[1], box.upRight[1]);
+    min_vec[2] = std::min(box.downLeft[2], box.upRight[2]);
+    boundingBoxes.push_back(Eigen::AlignedBox<double, 3>(min_vec, max_vec));
 }
 
 void BoxFilter::setFilterFrame(const Eigen::Affine3d& ff)
