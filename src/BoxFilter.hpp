@@ -11,8 +11,8 @@ namespace laser_filter {
  * */
 class Box {
 public:
-    base::Vector3d downLeft;
-    base::Vector3d upRight;
+    base::Vector3d downLeft; // Min values
+    base::Vector3d upRight; // Max values
 };
 
 /**
