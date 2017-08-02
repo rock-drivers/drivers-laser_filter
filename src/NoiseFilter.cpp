@@ -17,6 +17,12 @@ double NoiseFilter::calculateInclineAngle(const double reading1, const double re
 
 void NoiseFilter::filter(base::samples::LaserScan& filterdScan, const base::samples::LaserScan& ls)
 {
+    if(ls.ranges.empty())
+    {
+        filterdScan = ls;
+        return;
+    }
+    
     std::vector<bool> maskedPoints;
 
     int lastRange = ls.ranges.at(0);
